@@ -21,3 +21,18 @@ Run `make setup-vpn-aliases` to add the following aliases to your `.bashrc`:
 - `vpn-stop`: Stop the VPN connection.
 - `vpn-status`: Check the VPN connection status.
 
+
+## Pi-hole
+
+Run `make setup-pihole` to configure and start Pi-hole. This script will:
+- Check if port 53 is free (and offer to fix it if `systemd-resolved` conflicts).
+- Create necessary data directories.
+- Generate or set a password in `.env`.
+- Enable Docker to start on boot.
+- Start the Pi-hole container (configured to restart automatically).
+
+**Useful Commands:**
+- `make setup-pihole`: Initial setup and start.
+- `make start-pihole`: Start containers.
+- `make stop-pihole`: Stop containers.
+- `make logs-pihole`: View logs.

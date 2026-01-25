@@ -5,3 +5,16 @@ setup-vpn-router:
 # setup vpn aliases
 setup-vpn-aliases:
 	@bash setup_vpn_aliases.sh
+
+# pihole commands
+setup-pihole:
+	@bash setup_pihole.sh
+
+start-pihole:
+	@docker compose up -d
+
+stop-pihole:
+	@docker compose down
+
+logs-pihole:
+	@docker compose logs -f
