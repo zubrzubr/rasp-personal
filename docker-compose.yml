@@ -66,6 +66,8 @@ services:
     volumes:
       - ./homepage/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
+    env_file:
+      - ./homepage/config/.env
     environment:
       - PUID=1000
       - PGID=1000
