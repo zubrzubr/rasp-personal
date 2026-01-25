@@ -71,4 +71,5 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - HOMEPAGE_ALLOWED_HOSTS=*
     restart: unless-stopped
