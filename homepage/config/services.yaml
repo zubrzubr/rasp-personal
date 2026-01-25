@@ -28,7 +28,7 @@
         description: Router VPN
         widget:
             type: customapi
-            url: http://rasp-bridge:8000/vpn/status
+            url: http://{{HOMEPAGE_VAR_IP}}:8000/vpn/status
             refresh: 5000 # 5 seconds
             # Custom API widget mapping
             mappings:
