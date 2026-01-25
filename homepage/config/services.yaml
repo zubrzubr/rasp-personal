@@ -30,7 +30,6 @@
             type: customapi
             url: http://{{HOMEPAGE_VAR_IP}}:8000/vpn/status?format=json
             refresh: 5000 # 5 seconds
-            # Custom API widget mapping
             mappings:
               - field: status
                 label: Status
@@ -38,14 +37,26 @@
 
 - News:
     - BBC Ukrainian:
-        icon: bbc-news.png
+        icon: rss.png
         href: https://www.bbc.com/ukrainian
         description: Latest news from BBC Ukrainian
+        widget:
+            type: rss
+            url: https://feeds.bbci.co.uk/ukrainian/rss.xml
+            limit: 3
     - Hacker News:
         icon: ycombinator.png
         href: https://news.ycombinator.com
         description: Tech news
+        widget:
+            type: rss
+            url: https://news.ycombinator.com/rss
+            limit: 3
     - Texty.org.ua:
-        icon: text.png
+        icon: rss.png
         href: https://texty.org.ua
         description: Data journalism
+        widget:
+            type: rss
+            url: https://texty.org.ua/articles/feed.xml
+            limit: 3
