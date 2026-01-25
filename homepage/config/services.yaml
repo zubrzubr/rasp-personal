@@ -5,6 +5,7 @@
         href: http://{{HOMEPAGE_VAR_IP}}:80/admin/
         description: Network-wide Ad Block
         widget:
+        version: 6
             type: pihole
             url: http://pihole:80
             key: {{HOMEPAGE_VAR_PIHOLE_API_KEY}}
