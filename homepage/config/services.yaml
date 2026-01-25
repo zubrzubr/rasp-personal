@@ -23,3 +23,17 @@
         href: http://{{HOMEPAGE_VAR_IP}}:8384
         description: File Synchronization
         ping: {{HOMEPAGE_VAR_IP}}
+    - VPN:
+        icon: openvpn.png
+        # Link to homebridge since that's where we might manually control it nicely
+        href: http://{{HOMEPAGE_VAR_IP}}:8581 
+        description: Router VPN
+        widget:
+            type: customapi
+            url: http://rasp-bridge:8000/vpn/status
+            refresh: 5000 # 5 seconds
+            # Custom API widget mapping
+            mappings:
+              - field: status
+                label: Status
+                format: text
