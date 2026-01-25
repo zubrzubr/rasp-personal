@@ -22,7 +22,4 @@
         icon: syncthing.png
         href: http://{{HOMEPAGE_VAR_IP}}:8384
         description: File Synchronization
-        widget:
-            type: syncthing
-            url: http://syncthing:8384
-            key: {{HOMEPAGE_VAR_SYNCTHING_API_KEY}}
+        ping: {{HOMEPAGE_VAR_IP}}
