@@ -24,14 +24,13 @@ setup-syncthing:
 logs-syncthing:
 	@docker compose logs -f syncthing
 
-# Homepage commands
-setup-homepage:
-	@mkdir -p homepage/config
-	@# Copy example files if they don't exist? (already created by script)
-	@docker compose up -d homepage
+# Homarr commands
+setup-homarr:
+	@mkdir -p homarr/configs homarr/icons homarr/data
+	@docker compose up -d homarr
 
-logs-homepage:
-	@docker compose logs -f homepage
+logs-homarr:
+	@docker compose logs -f homarr
 
 # setup vpn router
 setup-vpn-router:

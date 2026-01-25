@@ -58,18 +58,14 @@ services:
       - "21027:21027/udp"
     restart: unless-stopped
 
-  homepage:
-    image: ghcr.io/gethomepage/homepage:latest
-    container_name: homepage
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./homepage/config:/app/config
-      - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
-    env_file:
-      - ./homepage/config/.env
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - HOMEPAGE_ALLOWED_HOSTS=*
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
     restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - ./homarr/configs:/app/data/configs
+      - ./homarr/icons:/app/public/icons
+      - ./homarr/data:/data
+    ports:
+      - '7575:7575'
