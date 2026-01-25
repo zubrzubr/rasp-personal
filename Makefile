@@ -1,3 +1,7 @@
+# setup docker
+setup-docker:
+	@bash setup_docker.sh
+
 # setup vpn router
 setup-vpn-router:
 	@bash setup_vpn_router.sh

@@ -2,6 +2,11 @@
 Personal scripts for raspberry pi
 
 
+## Docker Setup
+
+Run `make setup-docker` to install Docker, Docker Compose, and add your user to the docker group.
+**Note:** You may need to logout and login again (or reboot) after installation for group permissions to apply.
+
 ## VPN Router config
 
 1. sudo nano /etc/openvpn/client/clearvpn.conf
