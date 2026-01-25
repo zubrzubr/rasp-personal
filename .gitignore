@@ -213,3 +213,5 @@ pihole/etc-dnsmasq.d
 homebridge
 # homepage
 homepage/config/kubernetes.yaml
+# freshrss
+freshrss/config
