@@ -57,3 +57,16 @@ services:
       - "22000:22000/udp"
       - "21027:21027/udp"
     restart: unless-stopped
+
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./homepage/config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
+    environment:
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped

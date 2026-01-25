@@ -69,3 +69,12 @@ Run `make setup-syncthing` to start Syncthing.
 - Default folders are stored in `~/syncthing` (in your home directory).
 
 
+## Homepage (Dashboard)
+
+Run `make setup-homepage` to start the dashboard.
+- Access UI: `http://<raspberry-pi-ip>:3000`
+- Config files are in `./homepage/config`.
+- **Note:** You need to edit `./homepage/config/services.yaml` to add API keys for Pi-hole and Syncthing widgets to work properly.
+
+
+
