@@ -1,0 +1,12 @@
+# https://gethomepage.dev/latest/configs/widgets/
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+
+- search:
+    provider: google
+    target: _blank
+
+- date:
+    format: "dd/MM/yyyy HH:mm"

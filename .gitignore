@@ -211,7 +211,5 @@ pihole/etc-pihole
 pihole/etc-dnsmasq.d
 # homebridge
 homebridge
-# homarr
-homarr/configs
-homarr/data
-homarr/icons
+# homepage
+homepage/config/kubernetes.yaml
