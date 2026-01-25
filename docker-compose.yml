@@ -5,7 +5,7 @@ services:
     hostname: pihole
     environment:
       TZ: 'Europe/Warsaw'
-      WEBPASSWORD: '${PIHOLE_PASSWORD}'
+      WEBPASSWORD: ${PIHOLE_PASSWORD}
     volumes:
       - './pihole/etc-pihole:/etc/pihole'
       - './pihole/etc-dnsmasq.d:/etc/dnsmasq.d'
