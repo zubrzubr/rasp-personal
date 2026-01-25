@@ -41,3 +41,4 @@ Run `make setup-pihole` to configure and start Pi-hole. This script will:
 - `make start-pihole`: Start containers.
 - `make stop-pihole`: Stop containers.
 - `make logs-pihole`: View logs.
+- `make change-password-pihole`: Change the admin password.

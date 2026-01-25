@@ -22,3 +22,6 @@ stop-pihole:
 
 logs-pihole:
 	@docker compose logs -f
+
+change-password-pihole:
+	@docker exec -it pihole pihole -a -p
