@@ -4,7 +4,7 @@ setup-docker:
 
 # setup rasp bridge
 setup-rasp-bridge:
-	@bash setup_rasp_bridge.sh
+	@docker compose up -d --build rasp-bridge
 
 # Homebridge commands
 setup-homebridge:

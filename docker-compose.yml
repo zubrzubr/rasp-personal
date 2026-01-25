@@ -27,3 +27,16 @@ services:
       - HOMEBRIDGE_CONFIG_UI_PORT=8581
     volumes:
       - ./homebridge:/homebridge
+
+  rasp-bridge:
+    container_name: rasp-bridge
+    build: ./rasp-bridge
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    environment:
+      - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket

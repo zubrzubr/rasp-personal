@@ -43,7 +43,9 @@ def get_vpn_status():
 @app.get("/vpn/on")
 def vpn_turn_on():
     """Turn VPN on."""
-    success, output = run_command(f"sudo systemctl start {VPN_SERVICE_NAME}")
+    # Running inside container with privileged=true and dbus mounted
+    # We don't need sudo as we are root in container
+    success, output = run_command(f"systemctl start {VPN_SERVICE_NAME}")
     if success:
         return {"status": "success", "message": "VPN started"}
     else:
@@ -52,7 +54,7 @@ def vpn_turn_on():
 @app.get("/vpn/off")
 def vpn_turn_off():
     """Turn VPN off."""
-    success, output = run_command(f"sudo systemctl stop {VPN_SERVICE_NAME}")
+    success, output = run_command(f"systemctl stop {VPN_SERVICE_NAME}")
     if success:
         return {"status": "success", "message": "VPN stopped"}
     else:
