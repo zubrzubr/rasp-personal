@@ -98,6 +98,16 @@ fi
 
 # Force recreate to ensure config is picked up
 if docker compose up -d --force-recreate; then
+    
+    echo -e "${YELLOW}🔑 Enforcing password...${NC}"
+    # Wait for the container to be ready specifically by checking if pihole command is available
+    until docker exec pihole pihole version >/dev/null 2>&1; do
+        sleep 2
+    done
+    
+    # Manually set the password using the pihole CLI inside the container
+    docker exec pihole pihole -a -p "$PIHOLE_PASSWORD" >/dev/null
+    
     echo -e "${GREEN}🎉 Pi-hole Setup & Start Complete!${NC}"
     IP=$(hostname -I | cut -d' ' -f1)
     echo -e "Admin Interface: http://$IP/admin"
