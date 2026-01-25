@@ -38,5 +38,6 @@ services:
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
+    pid: host
     environment:
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket

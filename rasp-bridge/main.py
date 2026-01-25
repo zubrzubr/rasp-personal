@@ -35,17 +35,29 @@ def read_root():
 @app.get("/vpn/status")
 def get_vpn_status():
     """Check if VPN service is active."""
-    # systemctl is-active returns 0 if active, non-zero otherwise
-    success, _ = run_command(f"systemctl is-active --quiet {VPN_SERVICE_NAME}")
-    # Apple Shortcuts often work best with simple text or explicit ON/OFF strings
-    return {"active": success, "status": "ON" if success else "OFF"}
+    # Use nsenter to check status on HOST
+    # -t 1: Target pid 1 (host init)
+    # -m -u -n -i: Enter mount, uts, net, ipc namespaces
+    command = f"nsenter -t 1 -m -u -n -i systemctl is-active --quiet {VPN_SERVICE_NAME}"
+    
+    result = subprocess.run(
+        command,
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
+    )
+    # 0 = active, 3 = inactive
+    is_active = (result.returncode == 0)
+    logger.info(f"Status check return code: {result.returncode}")
+    return {"active": is_active, "status": "ON" if is_active else "OFF"}
 
 @app.get("/vpn/on")
 def vpn_turn_on():
     """Turn VPN on."""
-    # Running inside container with privileged=true and dbus mounted
-    # We don't need sudo as we are root in container
-    success, output = run_command(f"systemctl start {VPN_SERVICE_NAME}")
+    # Use nsenter to run start command on HOST
+    command = f"nsenter -t 1 -m -u -n -i systemctl start {VPN_SERVICE_NAME}"
+    success, output = run_command(command)
     if success:
         return {"status": "success", "message": "VPN started"}
     else:
@@ -54,7 +66,9 @@ def vpn_turn_on():
 @app.get("/vpn/off")
 def vpn_turn_off():
     """Turn VPN off."""
-    success, output = run_command(f"systemctl stop {VPN_SERVICE_NAME}")
+    # Use nsenter to run stop command on HOST
+    command = f"nsenter -t 1 -m -u -n -i systemctl stop {VPN_SERVICE_NAME}"
+    success, output = run_command(command)
     if success:
         return {"status": "success", "message": "VPN stopped"}
     else:
