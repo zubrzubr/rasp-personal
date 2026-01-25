@@ -7,6 +7,18 @@ Personal scripts for raspberry pi
 Run `make setup-docker` to install Docker, Docker Compose, and add your user to the docker group.
 **Note:** You may need to logout and login again (or reboot) after installation for group permissions to apply.
 
+**Note:** You may need to logout and login again (or reboot) after installation for group permissions to apply.
+
+## Rasp Bridge (Apple Home Integration)
+
+Run `make setup-rasp-bridge` to install and start the Python API bridge.
+This API allows you to control the VPN via simple HTTP requests, suitable for Apple Shortcuts.
+
+Endpoints:
+- `GET /vpn/status`: Check VPN status.
+- `GET /vpn/on`: Turn VPN on.
+- `GET /vpn/off`: Turn VPN off.
+
 ## VPN Router config
 
 1. sudo nano /etc/openvpn/client/clearvpn.conf

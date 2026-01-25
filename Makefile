@@ -2,6 +2,10 @@
 setup-docker:
 	@bash setup_docker.sh
 
+# setup rasp bridge
+setup-rasp-bridge:
+	@bash setup_rasp_bridge.sh
+
 # setup vpn router
 setup-vpn-router:
 	@bash setup_vpn_router.sh
