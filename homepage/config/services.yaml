@@ -40,7 +40,6 @@
         icon: freshrss.png
         href: http://{{HOMEPAGE_VAR_IP}}:8081
         description: RSS News Aggregator
-        ping: {{HOMEPAGE_VAR_IP}}:8081
         widget:
             type: freshrss
             url: http://freshrss:80
