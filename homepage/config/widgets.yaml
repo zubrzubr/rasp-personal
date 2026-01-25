@@ -22,19 +22,3 @@
 - search:
     provider: google
     target: _blank
-
-# News Feeds
-- rss:
-    label: BBC Ukrainian
-    url: https://feeds.bbci.co.uk/ukrainian/rss.xml
-    count: 3
-
-- rss:
-    label: Hacker News
-    url: https://news.ycombinator.com/rss
-    count: 3
-
-- rss:
-    label: Texty.org.ua
-    url: https://texty.org.ua/articles/feed.xml
-    count: 3

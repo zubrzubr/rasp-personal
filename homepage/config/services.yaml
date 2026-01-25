@@ -32,6 +32,20 @@
             refresh: 5000 # 5 seconds
             # Custom API widget mapping
             mappings:
-              - field: ""
-                label: On/Off
+              - field: status
+                label: Status
                 format: text
+
+- News:
+    - BBC Ukrainian:
+        icon: bbc-news.png
+        href: https://www.bbc.com/ukrainian
+        description: Latest news from BBC Ukrainian
+    - Hacker News:
+        icon: ycombinator.png
+        href: https://news.ycombinator.com
+        description: Tech news
+    - Texty.org.ua:
+        icon: text.png
+        href: https://texty.org.ua
+        description: Data journalism

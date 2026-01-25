@@ -11,3 +11,6 @@ layout:
     Personal:
         style: row
         columns: 3
+    News:
+        style: row
+        columns: 3
