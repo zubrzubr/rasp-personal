@@ -50,7 +50,8 @@ def get_vpn_status():
     # 0 = active, 3 = inactive
     is_active = (result.returncode == 0)
     logger.info(f"Status check return code: {result.returncode}")
-    return {"active": is_active, "status": "ON" if is_active else "OFF"}
+    return "1" if is_active else "0"
+
 
 @app.get("/vpn/on")
 def vpn_turn_on():
