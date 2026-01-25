@@ -35,13 +35,3 @@
                 label: Status
                 format: text
 
-- News:
-    - FreshRSS:
-        icon: freshrss.png
-        href: http://{{HOMEPAGE_VAR_IP}}:8081
-        description: RSS News Aggregator
-        widget:
-            type: freshrss
-            url: http://freshrss:80
-            username: {{HOMEPAGE_VAR_FRESHRSS_USER}}
-            password: {{HOMEPAGE_VAR_FRESHRSS_PASS}}

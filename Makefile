@@ -33,11 +33,6 @@ setup-homepage:
 logs-homepage:
 	@docker compose logs -f homepage
 
-# FreshRSS commands
-setup-freshrss:
-	@mkdir -p freshrss/config
-	@docker compose up -d freshrss
-
 logs-freshrss:
 	@docker compose logs -f freshrss
 
