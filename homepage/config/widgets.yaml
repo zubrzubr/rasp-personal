@@ -4,9 +4,17 @@
     memory: true
     disk: /
 
+- date:
+    format: "dd/MM/yyyy HH:mm"
+
+- openmeteo:
+    label: Weather
+    latitude: {{HOMEPAGE_VAR_LATITUDE}}
+    longitude: {{HOMEPAGE_VAR_LONGITUDE}}
+    timezone: Auto
+    units: metric
+    cache: 5 # Time in minutes to cache the response
+
 - search:
     provider: google
     target: _blank
-
-- date:
-    format: "dd/MM/yyyy HH:mm"
