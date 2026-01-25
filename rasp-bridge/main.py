@@ -33,8 +33,8 @@ def read_root():
 
 
 @app.get("/vpn/status")
-def get_vpn_status():
-    """Check if VPN service is active."""
+def get_vpn_status(format: str = "text"):
+    """Check if VPN service is active. format='json' returns JSON object."""
     # Use nsenter to check status on HOST
     # -t 1: Target pid 1 (host init)
     # -m -u -n -i: Enter mount, uts, net, ipc namespaces
@@ -50,7 +50,12 @@ def get_vpn_status():
     # 0 = active, 3 = inactive
     is_active = (result.returncode == 0)
     logger.info(f"Status check return code: {result.returncode}")
-    return "1" if is_active else "0"
+    
+    if format == "json":
+        return {"status": "ON" if is_active else "OFF"}
+    else:
+        # Default for Apple Shortcuts / Home App compatibility
+        return "1" if is_active else "0"
 
 
 @app.get("/vpn/on")
