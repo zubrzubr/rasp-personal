@@ -81,6 +81,12 @@ sudo systemctl enable docker
 echo -e "${GREEN}✅ Docker service enabled on boot.${NC}"
 
 echo -e "${YELLOW}🚀 Starting Pi-hole with Docker Compose...${NC}"
+
+# Source .env and export PIHOLE_PASSWORD so docker compose can substitute it
+if [ -f .env ]; then
+    export $(grep -v '^#' .env | xargs)
+fi
+
 if docker compose up -d; then
     echo -e "${GREEN}🎉 Pi-hole Setup & Start Complete!${NC}"
     IP=$(hostname -I | cut -d' ' -f1)
