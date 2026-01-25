@@ -12,3 +12,12 @@ Personal scripts for raspberry pi
     ```
 4. sudo nano /etc/openvpn/client/clearvpn-pass.txt
 5. Add your credentials
+
+## Aliases
+
+Run `make setup-vpn-aliases` to add the following aliases to your `.bashrc`:
+
+- `vpn-start`: Start the VPN connection.
+- `vpn-stop`: Stop the VPN connection.
+- `vpn-status`: Check the VPN connection status.
+
