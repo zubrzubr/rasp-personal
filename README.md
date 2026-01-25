@@ -61,3 +61,11 @@ Run `make setup-homebridge` to start Homebridge.
 - Access UI: `http://<raspberry-pi-ip>:8581`
 - Use the UI to install plugins (like `homebridge-http-switch`) to connect your VPN API or other devices to Apple Home.
 
+
+## Syncthing
+
+Run `make setup-syncthing` to start Syncthing.
+- Access UI: `http://<raspberry-pi-ip>:8384`
+- Default folders are stored in `~/syncthing` (in your home directory).
+
+

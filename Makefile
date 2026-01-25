@@ -14,6 +14,16 @@ setup-homebridge:
 logs-homebridge:
 	@docker compose logs -f homebridge
 
+# Syncthing commands
+setup-syncthing:
+	@mkdir -p ~/syncthing
+	@# Fix permissions for syncthing config dir to allow container to write
+	@sudo chown -R 1000:1000 ~/syncthing || true
+	@docker compose up -d syncthing
+
+logs-syncthing:
+	@docker compose logs -f syncthing
+
 # setup vpn router
 setup-vpn-router:
 	@bash setup_vpn_router.sh
