@@ -82,15 +82,26 @@ echo -e "${GREEN}✅ Docker service enabled on boot.${NC}"
 
 echo -e "${YELLOW}🚀 Starting Pi-hole with Docker Compose...${NC}"
 
-# Source .env and export PIHOLE_PASSWORD so docker compose can substitute it
+# Ensure PIHOLE_PASSWORD is available to docker compose
+# We read it explicitly from .env to be sure
 if [ -f .env ]; then
-    export $(grep -v '^#' .env | xargs)
+    # Load env vars safely
+    set -a
+    source .env
+    set +a
 fi
 
-if docker compose up -d; then
+if [ -z "$PIHOLE_PASSWORD" ]; then
+    echo -e "${RED}❌ PIHOLE_PASSWORD is missing from .env${NC}"
+    exit 1
+fi
+
+# Force recreate to ensure config is picked up
+if docker compose up -d --force-recreate; then
     echo -e "${GREEN}🎉 Pi-hole Setup & Start Complete!${NC}"
     IP=$(hostname -I | cut -d' ' -f1)
     echo -e "Admin Interface: http://$IP/admin"
+    echo -e "Password: ${PIHOLE_PASSWORD}"
 else
     echo -e "${RED}❌ Docker Compose failed. Check logs.${NC}"
 fi
