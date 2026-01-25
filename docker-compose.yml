@@ -32,6 +32,7 @@ services:
     container_name: rasp-bridge
     build: ./rasp-bridge
     restart: always
+    network_mode: host
     ports:
       - "8000:8000"
     volumes:
