@@ -1,38 +1,28 @@
+# https://gethomepage.dev/latest/configs/services/
 - Personal:
     - Pi-hole:
         icon: pi-hole.png
         href: http://{{HOMEPAGE_VAR_IP}}:80/admin/
         description: Network-wide Ad Block
-        container: pihole 
-        ping: {{HOMEPAGE_VAR_IP}}
         widget:
-            type: pihole
             version: 6
+            type: pihole
             url: http://pihole:80
             key: {{HOMEPAGE_VAR_PIHOLE_API_KEY}}
-            fields: ["ads_blocked_today", "ads_percentage_today", "domains_being_blocked"]
-
     - Homebridge:
         icon: homebridge.png
         href: http://{{HOMEPAGE_VAR_IP}}:8581
         description: Apple HomeKit integration
-        container: homebridge
-        ping: {{HOMEPAGE_VAR_IP}}
         widget:
             type: homebridge
             url: http://{{HOMEPAGE_VAR_IP}}:8581
             username: {{HOMEPAGE_VAR_HOMEBRIDGE_USER}}
             password: {{HOMEPAGE_VAR_HOMEBRIDGE_PASS}}
-            fields: ["status", "uptime", "accessories"]
-
     - Syncthing:
         icon: syncthing.png
         href: http://{{HOMEPAGE_VAR_IP}}:8384
         description: File Synchronization
-        container: syncthing
-        ping: {{HOMEPAGE_VAR_IP}}
         widget:
             type: syncthing
-            url: http://{{HOMEPAGE_VAR_IP}}:8384 
+            url: http://syncthing:8384
             key: {{HOMEPAGE_VAR_SYNCTHING_API_KEY}}
-            fields: ["folders", "devices", "state"]
