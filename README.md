@@ -54,3 +54,10 @@ Run `make setup-pihole` to configure and start Pi-hole. This script will:
 - `make stop-pihole`: Stop containers.
 - `make logs-pihole`: View logs.
 - `make change-password-pihole`: Change the admin password.
+
+## Homebridge
+
+Run `make setup-homebridge` to start Homebridge.
+- Access UI: `http://<raspberry-pi-ip>:8581`
+- Use the UI to install plugins (like `homebridge-http-switch`) to connect your VPN API or other devices to Apple Home.
+

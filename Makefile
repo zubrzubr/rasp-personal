@@ -6,6 +6,14 @@ setup-docker:
 setup-rasp-bridge:
 	@bash setup_rasp_bridge.sh
 
+# Homebridge commands
+setup-homebridge:
+	@mkdir -p homebridge
+	@docker compose up -d homebridge
+
+logs-homebridge:
+	@docker compose logs -f homebridge
+
 # setup vpn router
 setup-vpn-router:
 	@bash setup_vpn_router.sh
