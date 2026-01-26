@@ -1,6 +1,6 @@
 - 📰 Медіа та Чтиво:
     - Texty.org.ua:
-        - icon: https://texty.org.ua/static/core/images/favicon.ico
+        - icon: newspaper.png
           href: https://texty.org.ua/
           description: Журналістика даних
     - YouTube:
@@ -14,7 +14,7 @@
 
 - 👨‍💻 IT та Робота:
     - DOU:
-        - icon: https://s.dou.ua/img/favicon.ico
+        - icon: code.png
           href: https://dou.ua/
           description: Спільнота програмістів
     - GitHub:
@@ -22,7 +22,7 @@
           href: https://github.com/
           description: My Repos
     - Gemini:
-        - icon: gemini.png
+        - icon: google.png
           href: https://gemini.google.com/
 
 
