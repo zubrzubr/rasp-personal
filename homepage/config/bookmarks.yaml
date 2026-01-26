@@ -1,6 +1,6 @@
 - 📰 Медіа та Чтиво:
     - Texty.org.ua:
-        - icon: newspaper.png
+        - icon: https://texty.org.ua/static/core/images/favicon.ico
           href: https://texty.org.ua/
           description: Журналістика даних
     - YouTube:
@@ -8,7 +8,7 @@
           abbr: YT
           href: https://youtube.com/
     - Hacker News:
-        - icon: y-combinator.png
+        - icon: https://news.ycombinator.com/y18.svg
           href: https://news.ycombinator.com/
           description: Tech news
 
