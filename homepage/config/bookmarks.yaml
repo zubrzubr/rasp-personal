@@ -1,0 +1,35 @@
+- 📰 Медіа та Чтиво:
+    - Texty.org.ua:
+        - icon: https://texty.org.ua/static/core/images/favicon.ico
+          href: https://texty.org.ua/
+          description: Журналістика даних
+    - YouTube:
+        - icon: youtube.png
+        - abbr: YT
+          href: https://youtube.com/
+    - Hacker News:
+        - icon: y-combinator.png
+          href: https://news.ycombinator.com/
+          description: Tech news
+
+- 👨‍💻 IT та Робота:
+    - DOU:
+        - icon: https://s.dou.ua/img/favicon.ico
+          href: https://dou.ua/
+          description: Спільнота програмістів
+    - GitHub:
+        - icon: github-light.png
+          href: https://github.com/
+          description: My Repos
+    - Gemini:
+        - icon: gemini.png
+          href: https://gemini.google.com/
+
+
+- 🛠 Інструменти:
+    - Speedtest:
+        - icon: cloudflare.png
+          href: https://speed.cloudflare.com/
+    - Router:
+        - icon: router.png # або ubnt.png, mikrotik.png
+          href: http://192.168.1.1
