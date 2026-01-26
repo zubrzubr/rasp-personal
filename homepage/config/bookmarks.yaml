@@ -5,7 +5,7 @@
           description: Журналістика даних
     - YouTube:
         - icon: youtube.png
-        - abbr: YT
+          abbr: YT
           href: https://youtube.com/
     - Hacker News:
         - icon: y-combinator.png
