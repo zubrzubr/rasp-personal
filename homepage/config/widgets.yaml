@@ -11,6 +11,15 @@
         timeStyle: short
         hour12: false
 
+- openmeteo:
+    latitude: 54.372158
+    longitude: 18.638306
+    timezone: Europe/Warsaw # optional
+    units: metric # or imperial
+    cache: 5 # Time in minutes to cache API responses, to stay within limits
+    format: # optional, Intl.NumberFormat options
+      maximumFractionDigits: 1
+
 - search:
     provider: google
     target: _blank
