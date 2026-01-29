@@ -63,4 +63,9 @@ change-password-pihole:
 # speedtest-tracker commands
 setup-speedtest-tracker:
 	@mkdir -p speedtest/config
+	@touch .env
+	@if ! grep -q "SPEEDTEST_APP_KEY" .env; then \
+		echo "Generating Speedtest Tracker App Key..."; \
+		echo "SPEEDTEST_APP_KEY=base64:$$(openssl rand -base64 32)" >> .env; \
+	fi
 	@docker compose up -d speedtest-tracker
