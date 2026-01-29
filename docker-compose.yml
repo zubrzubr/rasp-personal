@@ -74,7 +74,7 @@ services:
       - HOMEPAGE_ALLOWED_HOSTS=*
     restart: unless-stopped
 
-speedtest-tracker:
+  speedtest-tracker:
     image: lscr.io/linuxserver/speedtest-tracker:latest
     container_name: speedtest-tracker
     ports:
