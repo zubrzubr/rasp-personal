@@ -31,7 +31,7 @@
         - icon: cloudflare.png
           href: https://speed.cloudflare.com/
     - Speedtest Local:
-        - icon: internet.png
+        - icon: mdi-rabbit
           href: http://192.168.1.61:8085
     - Router:
         - icon: router.png # або ubnt.png, mikrotik.png
