@@ -59,3 +59,8 @@ logs-pihole:
 
 change-password-pihole:
 	@docker exec -it pihole pihole -a -p
+
+# speedtest-tracker commands
+setup-speedtest-tracker:
+	@mkdir -p speedtest/config
+	@docker compose up -d speedtest-tracker

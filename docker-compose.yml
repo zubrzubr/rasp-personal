@@ -73,3 +73,17 @@ services:
       - PGID=1000
       - HOMEPAGE_ALLOWED_HOSTS=*
     restart: unless-stopped
+
+speedtest-tracker:
+    image: lscr.io/linuxserver/speedtest-tracker:latest
+    container_name: speedtest-tracker
+    ports:
+      - 8085:80
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+      - DISPLAY_TIME=true
+    volumes:
+      - ./speedtest/config:/config
+    restart: unless-stopped
